@@ -1,0 +1,1 @@
+docker compose -f ../haalcentraal-connector/docker-compose.frank.stub.yaml up --build --force-recreate --watch
