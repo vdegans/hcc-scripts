@@ -10,17 +10,25 @@ REM === Arrays ===
 set apps=LBA DEC_ZKN EXAMPLE_APP GWS
 set bsns=999998778 555555021 999998791 999998353 999998328 999999618
 set verwerkingssoorten=T V
+set user=KJANS VDWEER JGROO
 
 REM === Generate and Launch Requests ===
 for /L %%n in (1,1,%COUNT%) do (
     set /a "rand_app=!RANDOM! %% 4"
     set /a "rand_bsn=!RANDOM! %% 6"
     set /a "rand_verw=!RANDOM! %% 2"
+    set /a "rand_user=!RANDOM! %% 3"
 
     REM --- Get Random applicatie ---
     set i=0
     for %%a in (%apps%) do (
         if !i! EQU !rand_app! set "applicatie=%%a"
+        set /a i+=1
+    )
+    REM --- Get Random user ---
+    set i=0
+    for %%a in (%user%) do (
+        if !i! EQU !rand_user! set "user=%%a"
         set /a i+=1
     )
 
@@ -52,6 +60,7 @@ for /L %%n in (1,1,%COUNT%) do (
         echo             ^<stuf:zender^>
         echo                ^<stuf:organisatie^>1234^</stuf:organisatie^>
         echo                ^<stuf:applicatie^>!applicatie!^</stuf:applicatie^>
+        echo                ^<stuf:gebruiker^>!user!^</stuf:gebruiker^>
         echo             ^</stuf:zender^>
         echo             ^<stuf:ontvanger^>
         echo                ^<stuf:organisatie^>NEDGR^</stuf:organisatie^>

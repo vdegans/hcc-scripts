@@ -1,1 +1,1 @@
-docker compose -f ../haalcentraal-connector/docker-compose.frank.dev.yaml -f ../haalcentraal-connector/docker-compose-postgres.yaml --profile pgadmin up --build --force-recreate --watch
+docker compose -f ../haalcentraal-connector/docker-compose.frank.dev.yaml -f ../haalcentraal-connector/docker-compose-postgres.yaml --profile pgadmin up --build --force-recreate 
